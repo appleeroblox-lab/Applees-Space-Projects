@@ -1,5 +1,5 @@
 :root {
-  --bg: #02070d;
+  --bg: #2669bb;
   --surface: rgba(5, 18, 29, 0.72);
   --surface-strong: rgba(4, 15, 25, 0.9);
   --text: #f7fbff;
@@ -29,6 +29,8 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
@@ -45,7 +47,7 @@ body::before {
   z-index: -2;
   inset: -10px;
   content: "";
-  background:url("Background.png");
+  background-image: url("../images/Background.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
