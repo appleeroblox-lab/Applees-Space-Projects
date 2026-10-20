@@ -2,7 +2,7 @@
 
 (() => {
   // Deploy the optional Worker below and paste its HTTPS /stats URL here.
-  const STATS_ENDPOINT = "";
+  const STATS_ENDPOINT = "https://applee-roblox-stats.appleeroblox.workers.dev/";
   const REFRESH_MS = 45000;
 
   const projects = [
