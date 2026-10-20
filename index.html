@@ -1,135 +1,232 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Applee's Space Projects — Roblox space games and experimental projects by Applee.">
-  <meta name="theme-color" content="#030a12">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#040a16">
+  <meta name="description" content="Roblox space games and experimental projects — solo developed by Applee.">
+
   <title>Applee's Space Projects</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/Logo.png">
+  <link rel="icon" href="images/Logo.png">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
+
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <header class="header">
+    <a class="brand" href="#/home">
+      <img src="images/Logo.png" alt="" width="64" height="64">
 
-      <div class="site-menu" id="site-menu">
-        <nav class="primary-nav" aria-label="Primary navigation">
-          <a class="nav-link active" href="#top">Home</a>
-          <a class="nav-link" href="#games">Games</a>
-        </nav>
+      <span>
+        Applee’s
+        <strong><span>Space</span> Projects</strong>
+      </span>
+    </a>
 
-        <nav class="social-nav" aria-label="Social links">
-          <a href="https://discord.gg/rPdRRHSkmw" target="_blank" rel="noopener noreferrer">Discord</a>
-          <a href="https://www.youtube.com/@Rb_Unity_Dev_Ae" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://www.roblox.com/share/g/35584497" target="_blank" rel="noopener noreferrer">Roblox Group</a>
-        </nav>
-      </div>
-    </div>
+    <nav aria-label="Main navigation">
+      <a href="#/home" data-route="home">Home</a>
+      <a href="#/games" data-route="games">Games</a>
+      <a href="#/about" data-route="about">About</a>
+    </nav>
+
+    <span class="header-note">
+      <i></i>
+      Solo developed by Applee
+    </span>
   </header>
 
-  <main id="main-content">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <img class="hero-logo" src="images/Logo.png" alt="Applee's Space Projects logo" width="290" height="220">
+  <main id="content" tabindex="-1">
+    <section class="page home" id="home" aria-labelledby="home-title">
+      <div class="home-layout container">
+        <div class="hero-copy">
+          <p class="eyebrow">WELCOME TO MY UNIVERSE</p>
 
-        <h1 id="hero-title">
-          <span class="brand-owner">Applee's</span>
-          <span class="brand-project"><span>Space</span> Projects</span>
-        </h1>
+          <h1 id="home-title">
+            Applee’s
+            <span><b>Space</b> Projects</span>
+          </h1>
 
-        <p class="hero-subtitle">
-          Roblox space games and experimental projects — solo developed by
-          <a class="applee-link" href="https://github.com/appleeroblox-lab" target="_blank" rel="noopener noreferrer">Applee</a>.
-        </p>
+          <p class="lead">
+            Roblox space games and experimental projects —
+            solo developed by <strong class="pink">Applee.</strong>
+          </p>
 
-        <div class="hero-actions">
-          <a class="button button-primary" href="#games">
-            <span>Explore Games</span>
-            <span class="button-arrow" aria-hidden="true">↓</span>
-          </a>
+          <div class="actions">
+            <a class="button primary" href="#/games">
+              Explore Games <span aria-hidden="true">→</span>
+            </a>
 
-          <a class="button button-discord" href="https://discord.gg/rPdRRHSkmw" target="_blank" rel="noopener noreferrer">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="23" height="23">
-              <path fill="currentColor" d="M19.5 5.3A17.3 17.3 0 0 0 15.2 4l-.5 1.1a15.8 15.8 0 0 0-5.4 0L8.8 4a17 17 0 0 0-4.3 1.3C1.8 9.2 1 13 1.4 16.7A17.5 17.5 0 0 0 6.7 19L8 17.3a10.4 10.4 0 0 1-1.7-.8l.4-.3a12.4 12.4 0 0 0 10.6 0l.4.3c-.5.3-1.1.6-1.7.8l1.3 1.7a17.5 17.5 0 0 0 5.3-2.3c.5-4.3-.8-8.1-3.1-11.4ZM8.8 14.4c-1 0-1.9-.9-1.9-2s.8-2 1.9-2c1 0 1.8.9 1.8 2s-.8 2-1.8 2Zm6.4 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2c1.1 0 1.9.9 1.9 2s-.8 2-1.9 2Z"/>
-            </svg>
-            <span>Join Discord</span>
-            <span class="button-arrow" aria-hidden="true">→</span>
-          </a>
+            <a class="button secondary" href="#/about">
+              About Developer
+            </a>
+          </div>
         </div>
 
-        <p class="hero-tagline">Small ideas <span>•</span> Bigger universes</p>
+        <img
+          class="hero-logo"
+          src="images/Logo.png"
+          alt="Applee's apple and rocket logo"
+          width="480"
+          height="480"
+        >
+      </div>
+
+      <div class="home-panels container">
+        <dl class="overview glass">
+          <div>
+            <dt>Projects</dt>
+            <dd>03</dd>
+          </div>
+
+          <div>
+            <dt>Development</dt>
+            <dd>Solo</dd>
+          </div>
+
+          <div>
+            <dt>Playing now</dt>
+            <dd id="total-playing">Unavailable</dd>
+          </div>
+        </dl>
+
+        <a class="feature glass" href="#/games">
+          <p class="eyebrow">THE NEXT ADVENTURE</p>
+          <h2>Explore the Universe</h2>
+          <p>Discover space games, simulations, and experimental projects.</p>
+          <span class="feature-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="intro container">
+        <span aria-hidden="true">✦</span>
+
+        <p>
+          Small ideas. Bigger universes.
+          <small>Explore, experiment, and see what comes next.</small>
+        </p>
       </div>
     </section>
 
-    <section class="games-section" id="games" aria-labelledby="games-title">
-      <div class="section-heading">
-        <div class="heading-accent" aria-hidden="true"></div>
-        <div>
-          <h2 id="games-title">Our Games</h2>
-          <p>Explore the worlds we've created. Each project is a step toward a bigger universe.</p>
+    <section class="page games" id="games" aria-labelledby="games-title" hidden>
+      <div class="container">
+        <div class="page-heading">
+          <p class="eyebrow">WORLDS MADE TO EXPLORE</p>
+          <h1 id="games-title">Games<span class="pink">.</span></h1>
+          <p>Space adventures and experiments, made by Applee.</p>
         </div>
+
+        <div class="toolbar">
+          <label class="search">
+            <span class="sr-only">Search games</span>
+            <input id="search" type="search" placeholder="Search games…" autocomplete="off">
+          </label>
+
+          <label>
+            <span class="sr-only">Filter projects</span>
+            <select id="filter">
+              <option value="all">All projects</option>
+              <option value="public">Public</option>
+              <option value="development">In development</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="sr-only">Sort projects</span>
+            <select id="sort">
+              <option value="featured">Featured first</option>
+              <option value="name">Name A–Z</option>
+              <option value="playing">Most active</option>
+              <option value="visits">Most visited</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="result-count" class="result-count" role="status"></p>
+
+        <div id="game-grid" class="game-grid"></div>
+
+        <div id="empty" class="empty glass" hidden>
+          <h2>No projects found</h2>
+          <p>Try another search or change your filters.</p>
+          <button id="reset" class="button secondary" type="button">Clear filters</button>
+        </div>
+
+        <p id="stats-status" class="stats-status" role="status">
+          Live Roblox statistics are currently unavailable.
+        </p>
       </div>
+    </section>
 
-      <div class="games-grid">
-        <article class="game-card" data-url="https://www.roblox.com/games/135329454168418/The-Zero-Gravity-2">
-          <div class="thumbnail-wrap">
-            <img src="images/TZG2_Page.png" alt="The Zero Gravity 2 game thumbnail" loading="lazy">
-          </div>
-          <div class="game-details">
-            <h3>The Zero Gravity 2</h3>
-            <p class="byline">by <a class="applee-link" href="https://github.com/appleeroblox-lab" target="_blank" rel="noopener noreferrer">Applee</a></p>
-            <span class="status status-development"><span class="status-dot"></span>In Development</span>
-          </div>
-          <a class="play-button" href="https://www.roblox.com/games/135329454168418/The-Zero-Gravity-2" target="_blank" rel="noopener noreferrer" aria-label="Play The Zero Gravity 2 on Roblox">→</a>
-        </article>
+    <section class="page about" id="about" aria-labelledby="about-title" hidden>
+      <div class="about-layout container">
+        <div>
+          <p class="eyebrow">THE PERSON BEHIND THE PROJECTS</p>
 
-        <article class="game-card" data-url="https://www.roblox.com/games/103215463627191/The-Zero-Gravity">
-          <div class="thumbnail-wrap">
-            <img src="images/TZG_Page.png" alt="The Zero Gravity game thumbnail" loading="lazy">
-          </div>
-          <div class="game-details">
-            <h3>The Zero Gravity</h3>
-            <p class="byline">by <a class="applee-link" href="https://github.com/appleeroblox-lab" target="_blank" rel="noopener noreferrer">Applee</a></p>
-            <span class="status status-public"><span class="status-dot"></span>Public</span>
-          </div>
-          <a class="play-button" href="https://www.roblox.com/games/103215463627191/The-Zero-Gravity" target="_blank" rel="noopener noreferrer" aria-label="Play The Zero Gravity on Roblox">→</a>
-        </article>
+          <h1 id="about-title">About <span class="pink">Applee</span></h1>
 
-        <article class="game-card" data-url="https://www.roblox.com/games/132650472829217/Text-To-Speech-Test">
-          <div class="thumbnail-wrap">
-            <img src="images/TTS_Test.png" alt="Text To Speech Test game thumbnail" loading="lazy">
+          <p class="lead about-description">
+            Applee's Space Projects is a collection of Roblox space games
+            and experimental projects, all developed solo by
+            <strong class="pink">Applee.</strong>
+          </p>
+
+          <div class="about-cards">
+            <article class="glass">
+              <span class="info-icon" aria-hidden="true">&lt;/&gt;</span>
+              <h2>Solo Developer</h2>
+              <p>All games and projects are developed by Applee.</p>
+            </article>
+
+            <article class="glass">
+              <span class="info-icon" aria-hidden="true">◇</span>
+              <h2>Space & Simulation</h2>
+              <p>Inspired by space, exploration, and simulation.</p>
+            </article>
+
+            <article class="glass">
+              <span class="info-icon" aria-hidden="true">↗</span>
+              <h2>Always Improving</h2>
+              <p>New ideas, updates, and experiments. More to explore.</p>
+            </article>
           </div>
-          <div class="game-details">
-            <h3>Text To Speech Test </h3>
-            <p class="byline">by <a class="applee-link" href="https://github.com/appleeroblox-lab" target="_blank" rel="noopener noreferrer">Applee</a></p>
-            <span class="status status-public"><span class="status-dot"></span>Public</span>
-          </div>
-          <a class="play-button" href="https://www.roblox.com/games/132650472829217/Text-To-Speech-Test" target="_blank" rel="noopener noreferrer" aria-label="Play Text To Speech Test on Roblox">→</a>
-        </article>
+        </div>
+
+        <aside class="links glass">
+          <p class="eyebrow">STAY IN THE ORBIT</p>
+          <h2>Let’s connect.</h2>
+          <p>Follow the journey and join the community.</p>
+
+          <a class="social discord" href="https://discord.gg/rPdRRHSkmw" target="_blank" rel="noopener noreferrer">
+            Join Discord <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="social youtube" href="https://www.youtube.com/@Rb_Unity_Dev_Ae" target="_blank" rel="noopener noreferrer">
+            YouTube Channel <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="social roblox" href="https://www.roblox.com/share/g/35584497" target="_blank" rel="noopener noreferrer">
+            Roblox Group <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="github" href="https://github.com/appleeroblox-lab" target="_blank" rel="noopener noreferrer">
+            Find me on GitHub ↗
+          </a>
+        </aside>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Applee's Space Projects — by <a class="applee-link" href="https://github.com/appleeroblox-lab" target="_blank" rel="noopener noreferrer">Applee</a></p>
-    <nav class="footer-links" aria-label="Footer social links">
-      <a href="https://discord.gg/rPdRRHSkmw" target="_blank" rel="noopener noreferrer">Discord</a>
-      <a href="https://www.youtube.com/@Rb_Unity_Dev_Ae" target="_blank" rel="noopener noreferrer">YouTube</a>
-      <a href="https://www.roblox.com/share/g/35584497" target="_blank" rel="noopener noreferrer">Roblox Group</a>
-    </nav>
+  <footer class="footer container">
+    <p>© <span id="year"></span> Applee’s Space Projects</p>
+    <a href="#/about">About & links ↗</a>
   </footer>
+
+  <noscript>
+    <style>.page[hidden]{display:block!important}</style>
+    <p>Please enable JavaScript for navigation, game cards, and statistics.</p>
+  </noscript>
 </body>
 </html>
