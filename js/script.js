@@ -254,45 +254,60 @@
   }
 
   async function refreshStats() {
-    if (!STATS_ENDPOINT || refreshing || document.hidden) return;
+  if (!STATS_ENDPOINT || refreshing || document.hidden) return;
 
-    refreshing = true;
+  refreshing = true;
+  let snapshot = null;
 
-    if (!stats.size) {
-      cards.forEach(card => {
-        card.querySelectorAll("[data-stat]").forEach(element => {
-          element.textContent = "Loading…";
-          element.classList.add("loading");
-        });
-      });
+  try {
+    const response = await fetch(STATS_ENDPOINT, {
+      credentials: "omit",
+      cache: "no-store",
+      signal: AbortSignal.timeout(12000)
+    });
+
+    if (!response.ok) throw new Error("Statistics unavailable");
+
+    const result = await response.json();
+    const updatedAt = Date.parse(result.updatedAt);
+
+    if (!Array.isArray(result.games) || !Number.isFinite(updatedAt)) {
+      throw new Error("Invalid statistics");
     }
 
-    try {
-      const response = await fetch(STATS_ENDPOINT, {
-        credentials: "omit",
-        cache: "no-store",
-        signal: AbortSignal.timeout(12000)
-      });
+    if (Date.now() - updatedAt > 15 * 60 * 1000) {
+      throw new Error("Statistics are outdated");
+    }
 
-      if (!response.ok) throw new Error("Statistics unavailable");
+    stats.clear();
 
-      const result = await response.json();
-      if (!Array.isArray(result.games)) throw new Error("Invalid response");
+    result.games.forEach(game => {
+      if (game && projects.some(project => project.placeId === String(game.placeId))) {
+        stats.set(String(game.placeId), game);
+      }
+    });
 
-      stats.clear();
+    snapshot = result;
+  } catch {
+    stats.clear();
+  } finally {
+    refreshing = false;
+    renderStats();
 
-      result.games.forEach(game => {
-        if (game && projects.some(project => project.placeId === String(game.placeId))) {
-          stats.set(String(game.placeId), game);
-        }
-      });
-    } catch {
-      stats.clear();
-    } finally {
-      refreshing = false;
-      renderStats();
+    const hasData = [...stats.values()].some(game =>
+      isCount(game.playing) ||
+      isCount(game.visits) ||
+      isCount(game.upVotes)
+    );
+
+    if (snapshot && hasData) {
+      const time = new Date(snapshot.updatedAt).toLocaleString();
+
+      statsStatus.textContent =
+        `Roblox snapshot: ${time} · GitHub updates approximately every 5 minutes.`;
     }
   }
+}
 
   search.addEventListener("input", renderCollection);
   filter.addEventListener("change", renderCollection);
